@@ -28,7 +28,7 @@ def won?(board)
     if position_1 == position_2 && position_1 == position_3 && position_taken?(board, win_combination[0])
       return win_combination
     else
-      nil 
+      false 
     end
   end #end of each block
 end
