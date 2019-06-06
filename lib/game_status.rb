@@ -32,3 +32,9 @@ def won?(board)
     end
   end #end of each block
 end
+
+def full?
+end
+
+def draw?
+end
