@@ -33,8 +33,14 @@ def won?(board)
   end #end of each block
 end
 
-def full?
+def full?(board)
+  board.all? do |i|
+    position_taken?(board, i)
+  end
 end
 
 def draw?
+end
+
+def over?
 end
