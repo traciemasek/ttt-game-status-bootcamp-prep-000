@@ -16,21 +16,9 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  WIN_COMBINATIONS.each do |win_combination|
-    win_index_1 = win_combination[0]
-    win_index_2 = win_combination[1]
-    win_index_3 = win_combination[2]
-    
-    position_1 = board[win_index_1]
-    position_2 = board[win_index_2]
-    position_3 = board[win_index_3]
-    
-    if position_1 == position_2 && position_1 == position_3 && position_taken?(board, win_combination[0])
-      return win_combination
-    else
-      false 
-    end
-  end #end of each block
+  WIN_COMBINATIONS.detect do |win_combo|
+    board[win_combo[0]] == board[win_combo[1]] && board[win_combo[0]] == board[win_combo[2]] && position_taken?(board, win_combo[0])
+  end #end of detect block
 end
 
 def full?(board)
