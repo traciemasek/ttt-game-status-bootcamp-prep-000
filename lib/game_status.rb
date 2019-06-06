@@ -15,6 +15,7 @@ WIN_COMBINATIONS = [
   [2, 4, 6]
 ]
 
+#I couldn't get the lab to pass with using each on the tie or empty board tests (I think the problem is the inherit return of an array so I had to cheat and look at the solution but now I understand find/detect)
 def won?(board)
   WIN_COMBINATIONS.find do |win_combo|
     board[win_combo[0]] == board[win_combo[1]] && board[win_combo[0]] == board[win_combo[2]] && position_taken?(board, win_combo[0])
